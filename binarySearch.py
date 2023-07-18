@@ -32,3 +32,22 @@
 
 # 1) mid = 7 + 3/2 = 8
 # 2) Found target! woo
+
+# Given sorted array
+nums = [0, 1, 3, 4, 7, 10, 11, 13, 15, 16, 17, 18,
+        20, 21, 22, 23, 24, 27, 29, 31, 37, 40, 41]
+low = 0
+high = len(nums) - 1
+target = 31
+iteration = 1
+while (low <= high):
+    M = (low + high)/2
+    if (nums[M] < target):
+        low = M + 1
+    elif (nums[M] > target):
+        high = M - 1
+    else:
+        print("Found target " + str(target) + " at index " +
+              str(M) + " in " + str(iteration) + " iterations.")
+        break
+    iteration += 1
